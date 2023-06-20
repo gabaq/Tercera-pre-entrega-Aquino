@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template1</title>
+</head>
+<body>
+    <h2> Test ! Test ! Test </h2>
+    <p style="color:navy;">Nombre: {{ nombre }}</p>
+    <p style="color: navy;">Apellido: {{ apellido }}</p>
+
+    <div style="background-color: beige;">
+        <p>Lista de referidos:</p>
+        <p>
+            {% for name in namelist  %}
+                {% if name == "Coco" %}
+                    <p style="color: blue;">{{name}}</p>
+                {% else %}
+                    <p style="color: grey;">{{name}}</p>
+                {% endif %}
+            {% endfor %}
+        </p>
+    </div>
+</body>
+</html>
