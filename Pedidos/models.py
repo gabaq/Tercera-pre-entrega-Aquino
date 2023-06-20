@@ -18,4 +18,4 @@ class Empleado(models.Model):
 class Pedido(models.Model):
     descripcion= models.CharField(max_length=30)
     fechaDeEntrega= models.DateField()
-    entregado= models.BooleanField()
+    entregado= models.BooleanField() 
