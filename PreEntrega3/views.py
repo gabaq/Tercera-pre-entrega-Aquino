@@ -5,7 +5,7 @@ from django.template import Template, Context, loader
 def saludo (request):
     return HttpResponse("Welcome!")
 
-def segunda_vista (self, nombre):
+def segunda_vista (request, nombre):
     data = f"Usuario: <h4> {nombre} </h4>"
     return HttpResponse (data)
 
@@ -18,7 +18,7 @@ def template_test(request):
     #return HttpResponse(document1)
     return render(request,"template1.html")
 
-def template_test2(self):
+def template_test2(request):
     nombre = "Gabriel"
     apellido = "Aquino"
     namelist = ["Gabriel", "Roman", "Coco", "German"]
