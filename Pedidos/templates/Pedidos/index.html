@@ -6,14 +6,18 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'Pedidos/css/main.css'%}"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'Pedidos/css/bootstrap.min.css'%}"/>
+        <link rel="stylesheet" href="{% static 'Pedidos/css/bootstrap.min.css'%}"/>
         <script src="{% static 'Pedidos/js/bootstrap.min.js'%}"></script>
         <title> Pedidos </title>
     
     </head>
 
-    <body>
+    <body class="body2">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
             <div class="container">
@@ -31,39 +35,37 @@
         </nav>
 
         <div class="container-fluid" id="page-container">
-            <div id="content-wrap">
-                <div class="container-fluid" id="page-container">
-                    <div class="container-fluid" id="content-wrap">
-                        {% block contenidoQueCambia %}
-                        {% endblock %}
-                    </div>
-                </div>
-            </div>
+            {% block contenidoQueCambia %}
+            {% endblock %}
         </div>
         
         <!-- Footer-->
         <footer class="footer bg-dark">
-            <div>
-                <div class="container">
-                    <div class="row">
-                    <!--Footer location-->
-                        <div class="col">
-                            <h6 class="text-uppercase">Ubicacion</h6>
-                            <p class="lead mb-0">
-                                Calle Ficticia 1234 <br /> Ituzaingó, Buenos Aires, Argentina.
-                            </p>
-                        </div>
-                    <!--Footer social media-->
-                        <div class="col">
-                            <h6 class="text-uppercase">Redes sociales</h6>
-                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-facebook-f"></i></a>
+            <div class="container">
+                <div class="row">
+                <!--Footer location-->
+                    <div class="col">
+                        <h6 class="text-uppercase">Ubicacion</h6>
+                        <p class="lead mb-0">
+                            Calle Ficticia 1234 <br /> Ituzaingó, Buenos Aires, Argentina.
+                        </p>
+                    </div>
+                <!--Footer social media-->
+                    <div class="col">
+                        <h6 class="text-uppercase">Redes sociales</h6>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <br />
+                        <a class="btn btn-social btn-outline-light" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="container">
+                        <small>
                             <br />
-                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        </div>
-                        <div class="container"><small> &copy; 2023 Gabriel Aquino. Todos los derechos reservados.</small></div>
+                            &copy; 2023 Gabriel Aquino. Todos los derechos reservados.
+                        </small>
                     </div>
                 </div>
             </div>
+
 
         </footer>
 
