@@ -15,3 +15,6 @@ def empleado(request):
 
 def pedido(request):
     return render(request,'Pedidos/pedidos.html')
+
+def producto(request):
+    return render(request,'Pedidos/productos.html')
