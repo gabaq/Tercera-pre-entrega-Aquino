@@ -32,6 +32,15 @@ html {
   color: lightgray;
 }
 
+.mx-1 {
+  margin-top: 0.25rem !important;
+  margin-right: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+  margin-left: 0.25rem !important;
+
+}
+
+
 .btn {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
