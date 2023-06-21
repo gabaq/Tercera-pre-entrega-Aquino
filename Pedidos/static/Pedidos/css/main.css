@@ -1,13 +1,39 @@
-.main-nav-lead {
+:root {
+  --main-body-bg-color: white;
+  --main-body-text-color: black;
+
+  --main-footer-bg-color: brown;
+  --main-footer-text-color: white;
+
+  --main-copyright-bg-color: black;
+  --main-copyright-text-color: white;
+}
+
+
+.main-body-flexbox {
+  background-color: var(--main-body-bg-color);
+  color: var(--main-body-text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-brand-lead {
   font-size: 2rem !important;
   font-weight: 400 !important;
 }
 
 .main-footer{
-  background-color:slategray;
-  color: white; 
+  background-color: var(--main-footer-bg-color);
+  color: var(--main-footer-text-color); 
   text-align: center;
   padding: 10px;
+  margin-top: auto;
+}
+
+.main-footer-link{
+  color: var(--main-footer-text-color); 
+  text-decoration: none;
 }
 
 .main-brand-container{
@@ -17,10 +43,16 @@
   justify-items: center;
 }
 
+.main-footer-container{
+  align-items: center;
+  justify-items: center;
+}
+
 .main-copyright{
-  color: lightgray; 
+  background-color: var(--main-copyright-bg-color);
+  color: var(--main-copyright-text-color);
   text-align: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .main-btn-margins {

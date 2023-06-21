@@ -17,11 +17,12 @@
     
     </head>
 
-    <body class="main-body">
+    <body class="main-body-flexbox">
+        
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
             <div class="container">
-                <a class="navbar-brand main-nav-lead text-uppercase" href="{% url 'Inicio' %}">Pedidos</a>
+                <a class="navbar-brand main-brand-lead text-uppercase" href="{% url 'Inicio' %}">Pedidos</a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item lead mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Inicio' %}">Inicio</a></li>
@@ -40,13 +41,13 @@
         </div>
         
         <!-- Footer-->
-        <footer class="main-footer" >
+        <footer class="container-fluid main-footer" >
             <div class="container-fluid">
                 <div class="row">
                     <!--Footer brand-->
                     <div class="col main-brand-container">
                         <div class="container">
-                            <a class="navbar-brand main-nav-lead text-uppercase" href="{% url 'Inicio' %}">Pedidos</a>
+                            <a class="navbar-brand main-brand-lead text-uppercase" href="{% url 'Inicio' %}">Pedidos</a>
                         </div>
                     </div>
                     <!--Footer contact-->
@@ -60,16 +61,13 @@
                     </div>
                     <!--Footer location-->
                     <div class="col">
-                        <h6 class="lead text-uppercase">Ubicacion</h6>
-                        <!--<a class="btn btn-outline-light main-btn-margins" href="https://goo.gl/maps/KBSgVR5kVzVdUkLWA" target="_blank" rel="noopener noreferrer nofollow"><i class='fa-solid fa-location-dot'></i></a>-->
-                        <!--<p class="mb-0"><i class='fa-solid fa-location-dot'></i> Calle Ficticia 1234, Ituzaingó. </p>-->
-
-                        <a style="color: white; text-decoration: none;" href="https://goo.gl/maps/KBSgVR5kVzVdUkLWA" target="_blank" rel="noopener noreferrer nofollow">
-                            <span>
-                                <i class='fa-solid fa-location-dot'></i>
-                            </span>Ituzaingó <br/> Buenos Aires.
-                        </a>
-
+                            <h6 class="lead text-uppercase">Ubicacion</h6>
+                            <!--<a class="btn btn-outline-light main-btn-margins" href="https://goo.gl/maps/KBSgVR5kVzVdUkLWA" target="_blank" rel="noopener noreferrer nofollow"><i class='fa-solid fa-location-dot'></i></a>-->
+                            <a class="main-footer-link" href="https://goo.gl/maps/Ehd1Bi3EWvN3mUcB8" target="_blank" rel="noopener noreferrer nofollow">
+                                <span>
+                                    <i class='fa-solid fa-location-dot'></i>
+                                </span>Ituzaingó, Buenos Aires.
+                            </a>
                     </div>
                     <!--Footer social media-->
                     <div class="col">
