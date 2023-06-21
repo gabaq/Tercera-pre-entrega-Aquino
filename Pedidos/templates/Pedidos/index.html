@@ -11,24 +11,24 @@
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'Pedidos/css/main.css'%}"/>
-        <link rel="stylesheet" href="{% static 'Pedidos/css/bootstrap.min.css'%}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'Pedidos/css/bootstrap.min.css'%}"/>
         <script src="{% static 'Pedidos/js/bootstrap.min.js'%}"></script>
         <title> Pedidos </title>
     
     </head>
 
-    <body class="body2">
+    <body class="main-body">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'Inicio' %}">Pedidos</a>
+                <a class="navbar-brand main-nav-lead text-uppercase" href="{% url 'Inicio' %}">Pedidos</a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Inicio' %}">Inicio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Productos' %}">Productos</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Clientes' %}">Clientes</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Empleados' %}">Empleados</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Pedidos' %}">Pedidos</a></li>
+                        <li class="nav-item lead mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Inicio' %}">Inicio</a></li>
+                        <li class="nav-item lead mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Productos' %}">Productos</a></li>
+                        <li class="nav-item lead mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Clientes' %}">Clientes</a></li>
+                        <li class="nav-item lead mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Empleados' %}">Empleados</a></li>
+                        <li class="nav-item lead mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'Pedidos' %}">Pedidos</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,35 +40,56 @@
         </div>
         
         <!-- Footer-->
-        <footer class="footer bg-dark">
-            <div class="container">
+        <footer class="main-footer" >
+            <div class="container-fluid">
                 <div class="row">
-                <!--Footer location-->
+                    <!--Footer brand-->
+                    <div class="col main-brand-container">
+                        <div class="container">
+                            <a class="navbar-brand main-nav-lead text-uppercase" href="{% url 'Inicio' %}">Pedidos</a>
+                        </div>
+                    </div>
+                    <!--Footer contact-->
                     <div class="col">
-                        <h6 class="text-uppercase">Ubicacion</h6>
-                        <p class="lead mb-0">
-                            Calle Ficticia 1234 <br /> Ituzaingó, Buenos Aires, Argentina.
+                        <h6 class="lead text-uppercase">Contacto</h6>
+                        <p class="mb-0">
+                            +54 11 8888 8888 
+                            <br/> 
+                            Contacto@correo.com.ar
                         </p>
                     </div>
-                <!--Footer social media-->
+                    <!--Footer location-->
                     <div class="col">
-                        <h6 class="text-uppercase">Redes sociales</h6>
-                        <a class="btn btn-social btn-outline-light mx-1" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-social btn-outline-light mx-1" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-social btn-outline-light mx-1" href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-fw fa-twitter"></i></a>
+                        <h6 class="lead text-uppercase">Ubicacion</h6>
+                        <!--<a class="btn btn-outline-light main-btn-margins" href="https://goo.gl/maps/KBSgVR5kVzVdUkLWA" target="_blank" rel="noopener noreferrer nofollow"><i class='fa-solid fa-location-dot'></i></a>-->
+                        <!--<p class="mb-0"><i class='fa-solid fa-location-dot'></i> Calle Ficticia 1234, Ituzaingó. </p>-->
+
+                        <a style="color: white; text-decoration: none;" href="https://goo.gl/maps/KBSgVR5kVzVdUkLWA" target="_blank" rel="noopener noreferrer nofollow">
+                            <span>
+                                <i class='fa-solid fa-location-dot'></i>
+                            </span>Ituzaingó <br/> Buenos Aires.
+                        </a>
+
                     </div>
-                    <div class="container">
-                        <small>
-                            <br />
-                            &copy; 2023 Gabriel Aquino. Todos los derechos reservados.
-                        </small>
+                    <!--Footer social media-->
+                    <div class="col">
+                        <h6 class="lead text-uppercase">Redes sociales</h6>
+                        <div class="container" >
+                            <a class="btn btn-outline-light main-btn-margins" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-fw fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light main-btn-margins" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-fw fa-instagram"></i></a>
+                            <a class="btn btn-outline-light main-btn-margins" href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-fw fa-twitter"></i></a>
+                        </div> 
                     </div>
                 </div>
             </div>
 
-
         </footer>
-
+        <!--Footer copyright-->
+        <div class="container-fluid main-copyright bg-dark">
+            <small>
+                &copy; 2023 Gabriel Aquino.
+            </small>
+        </div>
     </body>
 
 </html>
