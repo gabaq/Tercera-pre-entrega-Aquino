@@ -1,0 +1,32 @@
+{% extends "Pedidos/clientes.html" %}
+{% load static %}
+
+{% block setClientes %}
+<div>
+    <p>Alta de clientes.</p>
+    
+    <form action="/apppedidos/setClientes/" method="post"> {% csrf_token %}
+    <!--
+        <input placeholder="Nombre" type = "text" name="nombre" required>
+        <input placeholder="Apellido" type = "text" name="apellido" required>
+        <input placeholder="Telefono" type = "text" name="telefono" required>
+        <input placeholder="Email" type = "email" name="email" required>
+        <input placeholder="Referencia" type = "text" name="referencia" required>
+        -->
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+        <input type = "submit" value="Enviar">
+    </form>
+    
+
+
+    
+    <!--
+    <p>
+        {{ miFormulario.as_p }}
+    </p>
+    -->
+
+</div>
+{% endblock %}

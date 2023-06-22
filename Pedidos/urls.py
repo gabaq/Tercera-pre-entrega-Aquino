@@ -1,5 +1,10 @@
 from django.urls import path
-from Pedidos.views import inicio,cliente,empleado,pedido, producto
+from Pedidos.views import *
+#inicio,cliente,empleado,pedido, producto, setClientes,getClientes, buscarClientes
+#from Pedidos import views
+# views.inicio,
+# views.cliente,
+# etc
 
 urlpatterns = [
     path('inicio/', inicio, name='Inicio'),
@@ -7,4 +12,8 @@ urlpatterns = [
     path('empleados/', empleado, name='Empleados'),
     path('pedidos/', pedido, name='Pedidos'),
     path('productos/', producto, name='Productos'),
+
+    path('setClientes/', setClientes, name='setClientes'),
+    path('getClientes/', getClientes, name='getClientes'),
+    path('buscarClientes/', buscarClientes, name='buscarClientes'),
 ]
