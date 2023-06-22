@@ -7,6 +7,7 @@ from Pedidos.views import *
 # etc
 
 urlpatterns = [
+    path('', inicio, name='Inicio'),
     path('inicio/', inicio, name='Inicio'),
     path('clientes/', cliente, name='Clientes'),
     path('empleados/', empleado, name='Empleados'),
