@@ -1,0 +1,21 @@
+{% extends "Pedidos/pedidos.html" %}
+{% load static %}
+
+{% block getPedidos %}
+<div>
+    <p>Consulta de pedidos.</p>
+    <form action="/apppedidos/buscarPedidos" method="GET">
+        <input placeholder="Nombre" type="text" name="nombre" id="nombre">
+        <input type="submit" value="Buscar">
+    </form>
+    
+    {% if pedidos %}
+        {% for  pedido in pedidos %}
+            <li> {{pedido.descripcion}} </li>
+            <li> {{pedido.fechaDeEntrega}} </li>
+            <li> {{pedido.entregado}} </li>
+        {% endfor %}
+    {% endif %}
+
+</div>
+{% endblock %}

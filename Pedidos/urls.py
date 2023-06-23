@@ -17,4 +17,8 @@ urlpatterns = [
     path('setClientes/', setClientes, name='setClientes'),
     path('getClientes/', getClientes, name='getClientes'),
     path('buscarClientes/', buscarClientes, name='buscarClientes'),
+
+    path('setEmpleados/', setEmpleados, name='setEmpleados'),
+    path('getEmpleados/', getEmpleados, name='getEmpleados'),
+    path('buscarEmpleados/', buscarEmpleados, name='buscarEmpleados'),
 ]

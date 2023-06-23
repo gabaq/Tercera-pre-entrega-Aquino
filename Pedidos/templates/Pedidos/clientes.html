@@ -3,28 +3,22 @@
 {% block contenidoQueCambia %}
 <div class="container-fluid" style="padding: 50px;">
     
-    <p>Clientes.</p>
+  <p>Clientes.</p>
 
+  <nav class="nav nav-pills lead" style="color: black;">
+    <a class="btn btn-outline-light main-btn-margins" href="{% url 'Clientes' %}" style="color: white; background-color: brown;"><i class="fa fa-home" aria-hidden="true"> </i> Inicio</a>
+    <a class="btn btn-outline-light main-btn-margins" href="{% url 'setClientes' %}" style="color: white; background-color: brown;"><i class="fa fa-plus" aria-hidden="true"> </i> Nuevo</a>
+    <a class="btn btn-outline-light main-btn-margins" href="{% url 'getClientes' %}" style="color: white; background-color: brown;"><i class="fa fa-search" aria-hidden="true"> </i> Buscar</a>
+</nav>
 
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" href="{% url 'setClientes' %}">setClientes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'getClientes' %}">getClientes</a>
-        </li>
-    </ul>
-
-
-    <div class="form">
-        {% block setClientes %}
-        {% endblock %}
-    </div>
-
-    <div class="form">
-        {% block getClientes %}
-        {% endblock %}
-    </div>
+  <div class="form">
+      {% block setClientes %}
+      {% endblock %}
+  </div>
+  <div class="form">
+      {% block getClientes %}
+      {% endblock %}
+  </div>
 
 </div>
 {% endblock %}

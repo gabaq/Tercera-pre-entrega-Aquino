@@ -1,0 +1,16 @@
+{% extends "Pedidos/productos.html" %}
+{% load static %}
+
+{% block setProductos %}
+<div>
+    <p>Alta de Productos.</p>
+    
+    <form action="/apppedidos/setProductos/" method="post"> {% csrf_token %}
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+        <input type = "submit" value="Enviar">
+    </form>
+       
+</div>
+{% endblock %}

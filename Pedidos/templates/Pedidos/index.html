@@ -10,8 +10,12 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
         <link rel="stylesheet" type="text/css" href="{% static 'Pedidos/css/main.css'%}"/>
         <link rel="stylesheet" type="text/css" href="{% static 'Pedidos/css/bootstrap.min.css'%}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'Pedidos/css/font-awesome.min.css'%}"/>
+        <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css” />
+
         <script src="{% static 'Pedidos/js/bootstrap.min.js'%}"></script>
         <title> Pedidos </title>
     
@@ -35,14 +39,14 @@
             </div>
         </nav>
 
-        <div class="container-fluid" id="page-container">
+        <div class="container" id="page-container">
             {% block contenidoQueCambia %}
             {% endblock %}
         </div>
         
         <!-- Footer-->
         <footer class="container-fluid main-footer" >
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <!--Footer brand-->
                     <div class="col main-brand-container">
@@ -50,29 +54,32 @@
                             <a class="navbar-brand main-brand-lead text-uppercase" href="{% url 'Inicio' %}">Pedidos</a>
                         </div>
                     </div>
+
                     <!--Footer contact-->
                     <div class="col">
-                        <h6 class="lead text-uppercase">Contacto</h6>
-                        <p class="mb-0">
-                            +54 11 8888 8888 
-                            <br/> 
-                            Contacto@correo.com.ar
-                        </p>
+                        <h6 class="lead text-uppercase">Whatsapp</h6>
+                        <div class="main-footer-container">
+                            <a class="main-footer-link" href="https://wa.me/54113414XXXX?text=Quisiera realizar una consulta." target="_blank" rel="noopener noreferrer nofollow">
+                                <span>
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </span> +54 11 8888 8888 
+                            </a>
+                        </div>
                     </div>
                     <!--Footer location-->
                     <div class="col">
-                            <h6 class="lead text-uppercase">Ubicacion</h6>
-                            <!--<a class="btn btn-outline-light main-btn-margins" href="https://goo.gl/maps/KBSgVR5kVzVdUkLWA" target="_blank" rel="noopener noreferrer nofollow"><i class='fa-solid fa-location-dot'></i></a>-->
+                        <h6 class="lead text-uppercase">Ubicacion</h6>
+                        <!--<a class="btn btn-outline-light main-btn-margins" href="https://goo.gl/maps/KBSgVR5kVzVdUkLWA" target="_blank" rel="noopener noreferrer nofollow"><i class='fa-solid fa-location-dot'></i></a>-->
+                        <div class="main-footer-container" style="align-items: center;">
                             <a class="main-footer-link" href="https://goo.gl/maps/Ehd1Bi3EWvN3mUcB8" target="_blank" rel="noopener noreferrer nofollow">
-                                <span>
-                                    <i class='fa-solid fa-location-dot'></i>
-                                </span>Ituzaingó, Buenos Aires.
+                                <span> <i class='fa-solid fa-location-dot'></i> </span>Ituzaingó, Buenos Aires.
                             </a>
+                        </div>
                     </div>
                     <!--Footer social media-->
                     <div class="col">
                         <h6 class="lead text-uppercase">Redes sociales</h6>
-                        <div class="container" >
+                        <div class="main-footer-container" >
                             <a class="btn btn-outline-light main-btn-margins" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-fw fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light main-btn-margins" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-fw fa-instagram"></i></a>
                             <a class="btn btn-outline-light main-btn-margins" href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer nofollow"><i class="fab fa-fw fa-twitter"></i></a>

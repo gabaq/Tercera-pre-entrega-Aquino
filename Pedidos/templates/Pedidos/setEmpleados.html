@@ -1,0 +1,20 @@
+{% extends "Pedidos/empleados.html" %}
+{% load static %}
+
+{% block setEmpleados %}
+<div>
+    <p>Alta de Empleados.</p>
+    
+    <form action="/apppedidos/setEmpleados/" method="post"> {% csrf_token %}
+        <table>
+            {{ miFormulario.as_table }}
+        </table>
+        <input type = "submit" value="Enviar">
+    </form>
+
+    <nav class="nav nav-pills lead" style="color: black;">
+        <a class="btn btn-outline-light main-btn-margins" href="{% url 'Empleados' %}" style="color: white; background-color: brown;"><i class="fa fa-times" aria-hidden="true"></i> Close</a>
+    </nav>
+       
+</div>
+{% endblock %}

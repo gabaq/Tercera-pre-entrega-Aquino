@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from Pedidos.models import Cliente
-from Pedidos.forms import form_setClientes
+from Pedidos.models import *
+from Pedidos.forms import *
 
 # Create your views here.
 
@@ -38,6 +38,8 @@ def setClientes_old(request):
     return render(request, "Pedidos/setClientes.html")
 
 
+# seccion Clientes
+
 def setClientes(request):
     if request.method == 'POST':
         miFormulario = form_setClientes(request.POST)
@@ -54,7 +56,7 @@ def setClientes(request):
     else:
         miFormulario = form_setClientes()
         return render(request, "Pedidos/setClientes.html", {"miFormulario":miFormulario})
-
+setClientes
 
 def getClientes(request):
     return render(request,'Pedidos/getClientes.html')
@@ -65,6 +67,39 @@ def buscarClientes(request):
         nombre = request.GET["nombre"]
         clientes = Cliente.objects.filter(nombre = nombre)
         return render(request, 'Pedidos/getClientes.html', {"clientes":clientes})
+    else:
+        respuesta = "No se enviaron datos"
+    return HttpResponse(respuesta)
+
+
+# seccion Empleados
+
+def setEmpleados(request):
+    if request.method == 'POST':
+        miFormulario = form_setEmpleados(request.POST)
+        print(miFormulario)
+        if miFormulario.is_valid:
+            data = miFormulario.cleaned_data
+            empleado = Empleado  (nombre=data["nombre"]
+                                ,apellido=data["apellido"]
+                                ,email=data["email"]
+                                ,cargo= data["cargo"])
+            empleado.save()
+            return render(request,'Pedidos/inicio.html')
+    else:
+        miFormulario = form_setEmpleados()
+        return render(request, "Pedidos/setEmpleados.html", {"miFormulario":miFormulario})
+
+
+def getEmpleados(request):
+    return render(request,'Pedidos/getEmpleados.html')
+
+
+def buscarEmpleados(request):
+    if request.GET["nombre"]:
+        nombre = request.GET["nombre"]
+        empleados = Empleado.objects.filter(nombre = nombre)
+        return render(request, 'Pedidos/getEmpleados.html', {"empleados":empleados})
     else:
         respuesta = "No se enviaron datos"
     return HttpResponse(respuesta)
