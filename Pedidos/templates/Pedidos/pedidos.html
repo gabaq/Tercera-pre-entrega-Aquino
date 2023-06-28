@@ -1,13 +1,24 @@
 {% extends "Pedidos/index.html" %}
 {% load static %}
 {% block contenidoQueCambia %}
-<section class="py-5">
-    <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+<div class="container-fluid" style="padding: 50px;">
             
-            <p>Pedidos.</p>
-            
-        </div>
+    <p>Pedidos.</p>
+
+    <nav class="nav nav-pills lead" style="color: black;">
+        <a class="btn btn-outline-light main-btn-margins" href="{% url 'Pedidos' %}" style="color: white; background-color: brown;"><i class="fa fa-home" aria-hidden="true"> </i> Inicio</a>
+        <a class="btn btn-outline-light main-btn-margins" href="{% url 'setPedidos' %}" style="color: white; background-color: brown;"><i class="fa fa-plus" aria-hidden="true"> </i> Nuevo</a>
+        <a class="btn btn-outline-light main-btn-margins" href="{% url 'getPedidos' %}" style="color: white; background-color: brown;"><i class="fa fa-search" aria-hidden="true"> </i> Buscar</a>
+    </nav>
+
+    <div class="form">
+        {% block setPedidos %}
+        {% endblock %}
     </div>
-</section>
+    <div class="form">
+        {% block getPedidos %}
+        {% endblock %}
+    </div>
+
+</div>
 {% endblock %}

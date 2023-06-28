@@ -4,9 +4,12 @@
 {% block getPedidos %}
 <div>
     <p>Consulta de pedidos.</p>
-    <form action="/apppedidos/buscarPedidos" method="GET">
-        <input placeholder="Nombre" type="text" name="nombre" id="nombre">
-        <input type="submit" value="Buscar">
+    <form action="/apppedidos/buscarEmpleados" method="GET">
+        <input placeholder="Descripcion" type="text" name="descripcion" id="descripcion">
+        <!--<input class="btn btn-outline-light main-btn-margins" style="color: white; background-color: brown;" type="submit" value="Buscar">-->
+        <br/>
+        <button type="submit" class="btn btn-outline-light main-btn-margins" style="color: white; background-color: brown;"><i class="fa fa-search" aria-hidden="true"> </i> Buscar</button>
+        <a class="btn btn-outline-light main-btn-margins" href="{% url 'Pedidos' %}" style="color: white; background-color: brown;"><i class="fa fa-times" aria-hidden="true"></i> Cancelar</a>
     </form>
     
     {% if pedidos %}
@@ -16,6 +19,5 @@
             <li> {{pedido.entregado}} </li>
         {% endfor %}
     {% endif %}
-
 </div>
 {% endblock %}

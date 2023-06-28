@@ -103,3 +103,35 @@ def buscarEmpleados(request):
     else:
         respuesta = "No se enviaron datos"
     return HttpResponse(respuesta)
+
+
+# seccion Pedidos
+
+def setPedidos(request):
+    if request.method == 'POST':
+        miFormulario = form_setPedidos(request.POST)
+        print(miFormulario)
+        if miFormulario.is_valid:
+            data = miFormulario.cleaned_data
+            pedido = Pedido  (descripcion= data["descripcion"]
+                            ,fechaDeEntrega= data["fechaDeEntrega"]
+                            ,entregado= data["entregado"])
+            pedido.save()
+            return render(request,'Pedidos/inicio.html')
+    else:
+        miFormulario = form_setPedidos()
+        return render(request, "Pedidos/setPedidos.html", {"miFormulario":miFormulario})
+
+
+def getPedidos(request):
+    return render(request,'Pedidos/getPedidos.html')
+
+
+def buscarPedidos(request):
+    if request.GET["descripcion"]:
+        descripcion = request.GET["descripcion"]
+        pedidos = Pedido.objects.filter(descripcion = descripcion)
+        return render(request, 'Pedidos/getPedidos.html', {"pedidos":pedidos})
+    else:
+        respuesta = "No se enviaron datos"
+    return HttpResponse(respuesta)
