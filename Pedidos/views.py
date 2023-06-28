@@ -44,7 +44,7 @@ def setClientes(request):
     if request.method == 'POST':
         miFormulario = form_setClientes(request.POST)
         print(miFormulario)
-        if miFormulario.is_valid:
+        if miFormulario.is_valid():
             data = miFormulario.cleaned_data
             cliente = Cliente  (nombre=data["nombre"]
                                 ,apellido=data["apellido"]
@@ -78,7 +78,7 @@ def setEmpleados(request):
     if request.method == 'POST':
         miFormulario = form_setEmpleados(request.POST)
         print(miFormulario)
-        if miFormulario.is_valid:
+        if miFormulario.is_valid():
             data = miFormulario.cleaned_data
             empleado = Empleado  (nombre=data["nombre"]
                                 ,apellido=data["apellido"]
@@ -111,7 +111,7 @@ def setPedidos(request):
     if request.method == 'POST':
         miFormulario = form_setPedidos(request.POST)
         print(miFormulario)
-        if miFormulario.is_valid:
+        if miFormulario.is_valid():
             data = miFormulario.cleaned_data
             pedido = Pedido  (descripcion= data["descripcion"]
                             ,fechaDeEntrega= data["fechaDeEntrega"]
