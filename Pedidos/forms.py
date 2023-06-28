@@ -15,5 +15,5 @@ class form_setEmpleados(forms.Form):
 
 class form_setPedidos(forms.Form):
     descripcion= forms.CharField(max_length=30)
-    fechaDeEntrega= forms.DateField()
-    entregado= forms.BooleanField() 
+    fechaDeEntrega= forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control', 'type':'date'}))
+    entregado= forms.BooleanField(required=False) 
