@@ -9,12 +9,13 @@
         <table>
             {{ miFormulario.as_table }}
         </table>
-        <input type = "submit" value="Enviar">
+        <button type="submit" class="btn btn-outline-light main-btn-margins" style="color: white; background-color: brown;"><i class="fa fa-search" aria-hidden="true"> </i> Enviar</button>
+        <a class="btn btn-outline-light main-btn-margins" href="{% url 'Clientes' %}" style="color: white; background-color: brown;"><i class="fa fa-times" aria-hidden="true"></i> Cancelar</a>
     </form>
        
-    <nav class="nav nav-pills lead" style="color: black;">
+<!--     <nav class="nav nav-pills lead" style="color: black;">
         <a class="btn btn-outline-light main-btn-margins" href="{% url 'Clientes' %}" style="color: white; background-color: brown;"><i class="fa fa-times" aria-hidden="true"></i> Close</a>
-    </nav>
+    </nav> -->
     
 </div>
 {% endblock %}
