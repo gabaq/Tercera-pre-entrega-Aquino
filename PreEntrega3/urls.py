@@ -19,7 +19,8 @@ from django.urls import path, include
 from PreEntrega3.views import saludo, segunda_vista, template_test, template_test2
 
 urlpatterns = [
-    path('', saludo),
+    path('', include('Pedidos.urls')),
+    #path('', saludo),
     path('admin/', admin.site.urls),
     path('s2/<nombre>', segunda_vista),
     path('template-test/', template_test),

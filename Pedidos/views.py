@@ -3,28 +3,25 @@ from django.http import HttpResponse
 from django.template import loader
 from Pedidos.models import *
 from Pedidos.forms import *
-
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth import login, logout,authenticate
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def inicio(request):
     return render(request,'Pedidos/inicio.html')
 
-
 def cliente(request):
     return render(request,'Pedidos/clientes.html')
-
 
 def empleado(request):
     return render(request,'Pedidos/empleados.html')
 
-
 def pedido(request):
     return render(request,'Pedidos/pedidos.html')
 
-
 def producto(request):
     return render(request,'Pedidos/productos.html')
-
 
 def setClientes_old(request):
     if request.method == 'POST':
@@ -135,3 +132,41 @@ def buscarPedidos(request):
     else:
         respuesta = "No se enviaron datos"
     return HttpResponse(respuesta)
+
+# seccion Login (no funciona)
+
+def loginPedidos(request):
+    if request.method == "post":
+        user = authenticate(username = request.post['user'], password = request.post['password'])
+        if user != None:
+            login(request, user)
+            return render("Pedidos/inicio.html")
+        else:
+            return render(request, 'Pedidos/login.html', {'error': 'Usuario o contraseña incorrectos.'})
+    else:
+        return render(request, 'Pedidos/login.html')
+        
+# seccion Login (example)
+
+def loginWeb(request):
+    if request.method == "POST":
+        user = authenticate(username = request.POST['user'], password = request.POST['password'])
+        if user is not None:
+            login(request, user)
+            return HttpResponse("Pedidos/inicio.html")
+        else:
+            return render(request, 'Pedidos/login.html', {'error': 'Usuario o contraseña incorrectos'})
+    else:
+        return render(request, 'Pedidos/login.html')
+
+# seccion Register
+
+def registerWeb(request):
+#def registro(request):
+    if request.method == "POST":
+        userCreate = UserCreationForm(request.POST)
+        if userCreate is not None:
+            userCreate.save()
+            return render(request, 'Pedidos/login.html')
+    else:
+        return render(request, 'Pedidos/register.html')

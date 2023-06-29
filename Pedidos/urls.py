@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth.views import LogoutView
 from Pedidos.views import *
 #inicio,cliente,empleado,pedido, producto, setClientes,getClientes, buscarClientes
 #from Pedidos import views
@@ -7,10 +8,12 @@ from Pedidos.views import *
 # etc
 
 urlpatterns = [
-    path('', inicio, name='Inicio'),
+    path('', loginWeb, name='Login'),
     path('inicio/', inicio, name='Inicio'),
 
-
+    path('login/', loginWeb, name='login'),
+    path('register/', registerWeb, name='register'),
+    path('logout/', LogoutView.as_view(template_name='Pedidos/login.html'), name='Logout'),
 
     path('productos/', producto, name='Productos'),
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Pedidos/css/main.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'Pedidos/css/bootstrap.min.css'%}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'Pedidos/css/font-awesome.min.css'%}"/>
+    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css” />
+
+    <script src="{% static 'Pedidos/js/bootstrap.min.js'%}"></script>
+    <title>PEDIDOS - Login</title>
+</head>
+<body>
+    <div class="container-form">
+        <form action="" method="post" class="formLogin">{% csrf_token %}
+            <h3 style="color: black; font-weight: bold; margin-bottom: 30px; display: flex; justify-content: center; align-items: center;">LOGIN PEDIDOS</h3>
+            <div>
+                <input type="text" class="inputLogin" name="user" placeholder="Username">
+            </div>      
+            <div>
+                <input type="password" class="inputLogin" name="password" placeholder="Password">
+            </div>
+            <div>
+                <button class="btn btn-primary" type="submit">Loguin</button>
+            </div>
+            {% if error %}
+                <p style="color: red;">{{error}}</p>
+            {% endif %}
+            <div>
+                <p>Aun no tienes una cuenta? <a href="/apppedidos/register/">Registrate</a></p>
+            </div>
+        </form> 
+    </div>
+</body>
+</html>
